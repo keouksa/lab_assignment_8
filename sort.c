@@ -27,11 +27,33 @@ size_t Size(void* ptr)
 	return ((size_t*)ptr)[-1];
 }
 
-// implement merge sort
+void merge(int pData[], int l, int m, int r) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    // Allocate temporary arrays using Alloc
+    int *L = (int *)Alloc(n1 * sizeof(int));
+    int *R = (int *)Alloc(n2 * sizeof(int));
+
+    // ... (rest of the merge function implementation)
+}
+
+// Implement merge sort
 // extraMemoryAllocated counts bytes of extra memory allocated
 void mergeSort(int pData[], int l, int r)
 {
+    if (l < r) {
+        int m = l + (r - l) / 2;  // Prevent potential integer overflow
+
+        // Recursively sort first and second halves
+        mergeSort(pData, l, m);
+        mergeSort(pData, m + 1, r);
+
+        // Merge the sorted halves back into pData
+        merge(pData, l, m, r);
+    }
 }
+
 
 // parses input file to an integer array
 int parseData(char *inputFileName, int **ppData)
