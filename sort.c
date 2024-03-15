@@ -36,7 +36,6 @@ void merge(int pData[], int l, int m, int r) {
     int *L = (int *)Alloc(n1 * sizeof(int));
     int *R = (int *)Alloc(n2 * sizeof(int));
 
-    // ... (rest of the merge function implementation)
 }
 
 // Implement merge sort
